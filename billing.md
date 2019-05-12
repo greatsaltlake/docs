@@ -246,6 +246,9 @@ If you would like to swap plans and cancel any trial period the user is currentl
 Sometimes subscriptions are affected by "quantity". For example, your application might charge $10 per month **per user** on an account. To easily increment or decrement your subscription quantity, use the `incrementQuantity` and `decrementQuantity` methods:
 
     $user = User::find(1);
+    
+    // Set a quantity when creating a new subscription...
+    $user->newSubscription('main', 'monthly')->quantity(5)->create();
 
     $user->subscription('main')->incrementQuantity();
 
